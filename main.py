@@ -26,26 +26,21 @@ def read_data(file):
         raise ValueError("Unsupported file type. Please upload a CSV or Excel file.")
     
 def preprocess_data(df, target_column, scaler_type):
-    # Split features and target
     X = df.drop(columns=[target_column])
     y = df[target_column]
 
-    # Check if there are only numerical or categorical columns
     numerical_cols = X.select_dtypes(include=['number']).columns
     categorical_cols = X.select_dtypes(include=['object', 'category']).columns
 
     if len(numerical_cols) == 0:
         pass
     else:
-        # Split data into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-        # Impute missing values for numerical columns (mean imputation)
         num_imputer = SimpleImputer(strategy='mean')
         X_train[numerical_cols] = num_imputer.fit_transform(X_train[numerical_cols])
         X_test[numerical_cols] = num_imputer.transform(X_test[numerical_cols])
 
-        # Scale the numerical features based on scaler_type
         if scaler_type == 'standard':
             scaler = StandardScaler()
         elif scaler_type == 'minmax':
@@ -57,12 +52,11 @@ def preprocess_data(df, target_column, scaler_type):
     if len(categorical_cols) == 0:
         pass
     else:
-        # Impute missing values for categorical columns (mode imputation)
+
         cat_imputer = SimpleImputer(strategy='most_frequent')
         X_train[categorical_cols] = cat_imputer.fit_transform(X_train[categorical_cols])
         X_test[categorical_cols] = cat_imputer.transform(X_test[categorical_cols])
 
-        # One-hot encode categorical features
         encoder = OneHotEncoder()
         X_train_encoded = encoder.fit_transform(X_train[categorical_cols])
         X_test_encoded = encoder.transform(X_test[categorical_cols])
