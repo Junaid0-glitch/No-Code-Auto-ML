@@ -8,7 +8,7 @@ from xgboost import XGBClassifier
 from main import read_data, preprocess_data, train_model, evaluate_model
 
 st.set_page_config(page_title="No Code ML Model Training", layout="wide")
-st.title("🤖 No Code ML Model Training")
+st.title("No Code ML Model Training")
 
 uploaded_file = st.file_uploader("Select a dataset from the dropdown", type=["csv", "xlsx", "xls"])
 
@@ -48,16 +48,15 @@ if uploaded_file:
                 st.session_state['accuracy'] = accuracy
 
             except Exception as e:
-                st.error(f"⚠️ Error: {e}")
+                st.error(f"Error: {e}")
 
-# Display after form submission
 if st.session_state.get('trained'):
-    st.success(f"✅ Model trained and saved as `{st.session_state['model_path']}`")
+    st.success(f"Model trained and saved as `{st.session_state['model_path']}`")
     st.metric("Accuracy", f"{st.session_state['accuracy'] * 100:.2f}%")
 
     with open(st.session_state['model_path'], "rb") as f:
         st.download_button(
-            label="📥 Download Trained Model",
+            label="Download Trained Model",
             data=f,
             file_name=st.session_state['model_path'].split("/")[-1],
             mime="application/octet-stream"
