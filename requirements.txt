@@ -1,0 +1,5 @@
+streamlit
+streamlit-option-menu
+openpyxl
+scikit-learn
+xgboost
