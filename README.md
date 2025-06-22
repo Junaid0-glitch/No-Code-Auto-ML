@@ -98,9 +98,3 @@ You can extend this app by:
 
 ---
 
-
-## 👤 Author
-
-Built with ❤️ by [Your Name](https://github.com/yourusername)
-
----
