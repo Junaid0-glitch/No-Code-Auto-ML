@@ -3,6 +3,8 @@
 
 A **Streamlit-based** application that allows users to **train machine learning models without writing any code**. Upload your dataset, configure your model, and train it — all through a clean, interactive UI. You can also download the trained model for future use.
 
+Streamlit App Link : https://no-code-auto-ml-nejcgnqzwjrakdjceq9q8s.streamlit.app/
+
 ---
 
 ## 🚀 Features
@@ -25,13 +27,14 @@ A **Streamlit-based** application that allows users to **train machine learning 
 
 ### 🧩 Upload and Configure
 
-![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2025-06-22 131524](https://github.com/user-attachments/assets/c26143e2-2e42-42e2-afa7-e36e555982bf)
 
 ### 📈 Results and Download
 
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 2025-06-22 131448](https://github.com/user-attachments/assets/120c2def-cede-4982-973a-ca365a772b5a)
 
-> *Make sure to place your screenshots inside a `screenshots/` folder.*
+
+
 
 ---
 
@@ -55,20 +58,6 @@ A **Streamlit-based** application that allows users to **train machine learning 
    ```bash
    streamlit run app.py
    ```
-
----
-
-## 📁 File Structure
-
-```bash
-no-code-ml-app/
-├── app.py                   # Main Streamlit app
-├── main.py                  # Utility functions: preprocess, train, evaluate
-├── models/                  # Trained models saved as .pkl
-├── screenshots/             # Screenshots for README
-├── requirements.txt         # Python dependencies
-└── README.md
-```
 
 ---
 
@@ -109,11 +98,6 @@ You can extend this app by:
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 ## 👤 Author
 
